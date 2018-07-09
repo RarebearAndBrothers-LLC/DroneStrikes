@@ -1,4 +1,6 @@
 import React from 'react';
+import Map from './Map'
+
 
 const DroneStrikeDisplay = (props) => {
 
@@ -23,6 +25,7 @@ const DroneStrikeDisplay = (props) => {
                 {(props.strike.children !== "") ? <h3>Children: {props.strike.children}</h3> : <h3>No confimred children casualties</h3>}
                 
             </ul>
+            <Map lat={props.strike.lat} lon={props.strike.lon}/>
         </div>
       </div> : null
     )

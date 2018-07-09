@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css'
-import backupData from './data'
+// import backupData from './data'
 import DroneStrikeList from './Components/DroneStrikeList';
 import DroneStrikeDisplay from './Components/DroneStrikeDisplay';
+
 
 
 class App extends Component {
@@ -16,11 +17,6 @@ class App extends Component {
   componentDidMount(){
     var url = "api.dronestre.am/data"
     fetch(`https://${url}`).then(res=>res.json()).then( data => this.setState({droneStrikes: data.strike}, ()=> console.log(this.state)))
-    
-    // let strikes = backupData.strike;
-    // this.setState({
-    //   droneStrikes: strikes
-    // },()=>console.log(this.state))
   }
  
 

@@ -12,8 +12,8 @@ const DroneStrikeList = (props) => {
 
   return (
     
-    <div class='col-md-4'>
-      <ul class="list-group" id="list-group">
+    <div className='col-md-4'>
+      <ul className="list-group" id="list-group">
       {mapStrikes()}
       </ul>
     </div>
