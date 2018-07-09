@@ -17,7 +17,7 @@ class App extends Component {
 
   componentDidMount(){
     var url = "api.dronestre.am/data"
-    fetch(`https://${url}`).then(res=>res.json()).then( data => this.setState({droneStrikes: data.strike}, ()=> console.log("strike arr", this.state)))
+    fetch(`https://${url}`).then(res=>res.json()).then( data => this.setState({droneStrikes: data.strike}))
   }
  
 
@@ -39,6 +39,18 @@ class App extends Component {
     return this.state.droneStrikes.filter(s =>  s.country.includes(this.state.searchQuery) || s.date.includes(this.state.searchQuery))
   }
 
+  handleStrikeReport = (e) => {
+    e.preventDefault()
+    let country = e.target.country.value
+    let narrative = e.target.narrative.value
+    let date = e.target.date.value
+    let deaths = e.target.deaths.value 
+    let injuries = e.target.injuries.value 
+    let civilians = e.target.civilians.value
+    let children = e.target.children.value
+    debugger
+  }
+
   render() {
     return (
       <div className="app">
@@ -46,7 +58,7 @@ class App extends Component {
           <DroneStrikeList droneStrikes={this.state.droneStrikes} handleClick={this.handleClick} handleChange={this.handleChange} searchQuery={this.state.searchQuery} filteredList={this.filteredList()}/> 
         </div>
         <div className="view-container">
-          <DroneStrikeDisplay strike={this.state.selectedStrike}/>
+          <DroneStrikeDisplay strike={this.state.selectedStrike} handleStrikeReport={this.handleStrikeReport}/>
         </div>
       </div>
     );

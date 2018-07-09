@@ -5,8 +5,7 @@ class Map extends Component {
     
     
    render() {
-   
-   
+
    const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = { { lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lon)} }
