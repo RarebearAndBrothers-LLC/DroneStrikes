@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-
-
 const DroneStrike = (props) => {
 
    let formatDate = () => {
@@ -12,7 +9,7 @@ const DroneStrike = (props) => {
     }
 
     return (
-        <div onClick={()=>props.handleClick(props.strike)}>
+        <div className="DroneStrike" onClick={()=>props.handleClick(props.strike)}>
            <h4>{props.strike.country} | {formatDate()}</h4>
         </div>
     )

@@ -13,7 +13,7 @@ const DroneStrikeDisplay = (props) => {
     
     return(
         (props.strike !== "") ? 
-        <div class='col-md-8'>
+        <div className='col-md-8'>
             <h1>Strike Details</h1>
         <div id="beer-detail">
             <h3>{formatDate()} </h3>
