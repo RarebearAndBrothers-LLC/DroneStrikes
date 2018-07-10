@@ -11,7 +11,15 @@ class App extends Component {
   state = {
     droneStrikes: [],
     selectedStrike: "",
-    searchQuery: ""
+    searchQuery: "",
+    country: "",
+    narrative: "",
+    date: "",
+    deaths: "",
+    injuries: "",
+    civilians: "", 
+    children: "", 
+    link: "", 
   }
 
 
@@ -48,7 +56,20 @@ class App extends Component {
     let injuries = e.target.injuries.value 
     let civilians = e.target.civilians.value
     let children = e.target.children.value
-    debugger
+    let link = e.target.link.value
+      this.setState({
+        country: country,
+        narrative: narrative,
+        date: date,
+        deaths: deaths,
+        injuries: injuries,
+        civilians: civilians,
+        children: children,
+        link: link
+      }, ()=> console.log(this.state))
+
+
+
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React from 'react';
-import Map from './Map'
+import Map from './Map';
+
 
 
 const DroneStrikeDisplay = (props) => {
@@ -35,7 +36,8 @@ const DroneStrikeDisplay = (props) => {
                     Deaths:  <input type="text" name="deaths" /> <br/> <br/>
                     Injuries:  <input type="text" name="injuries" /> <br/> <br/>
                     Civilians Killed:  <input type="text" name="civilians" /> <br/> <br/>
-                    Children Killed:  <input type="text" name="children" />  <br/> 
+                    Children Killed:  <input type="text" name="children" />  <br/>
+                    Report Source Link:  <input type="text" name="link" />  <br/>  <br/>
                     <input type="submit" value="Report Drone Strike" />
                 </ul>
             </form>
