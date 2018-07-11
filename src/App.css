@@ -1,6 +1,6 @@
 .list-container {
-    text-align: left;
-    width: 20%;
+    text-align: center;
+    width: 25%;
     float: left;
     overflow-y: scroll;
     height: 1200px;
@@ -8,5 +8,7 @@
 
 .view-container {
     float: right; 
-    width: 80%
+    width: 75%
 }
+
+

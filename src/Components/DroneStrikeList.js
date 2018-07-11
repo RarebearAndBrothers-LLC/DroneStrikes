@@ -13,17 +13,15 @@ const DroneStrikeList = (props) => {
       } else {
         console.log("DroneStrikeList",props)
         return props.filteredList.map((s)=> {
-          return <DroneStrike key={s.number}  strike={s} handleClick={props.handleClick}/> 
+          return <DroneStrike key={s.number}  strike={s} handleClick={props.handleClick} /> 
         });
       }
     }
-
-  
-
+    
   return (
     <div>
       <div>
-        <form>
+        <form className="search">
           <input placeholder="Sort by Country/Date" value={props.searchQuery} onChange={(event) => props.handleChange(event, event.target.value)}/>
         </form>
       </div>
