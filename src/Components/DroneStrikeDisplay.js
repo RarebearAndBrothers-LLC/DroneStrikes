@@ -11,6 +11,27 @@ const DroneStrikeDisplay = (props) => {
             let date = longDate.split("T")[0];
         return date}
     }
+
+    let displayDeathImages = () => {
+        let arr = []
+        let civilianDeaths;
+        
+        if(props.strike.civilians === "" || props.strike.civilians === "Unknown"){
+            civilianDeaths = 0 
+        } else {
+            civilianDeaths = parseInt(props.strike.civilians)
+        }
+    
+
+        for(let i=0; i < parseInt(props.strike.deaths); i++){
+            if(civilianDeaths <= i){
+                arr.push(<div className="deaths"><img src={"https://storage.needpix.com/thumbs/user-296686_1280.png"} height="20"/></div>)
+            } else {
+                arr.push(<div className="deaths"><img src={"https://storage.needpix.com/rsynced_images/buddy-303603_1280.png"} height="20"/></div>)
+            }
+        }
+        return arr 
+    }
     
     return(
         (props.strike !== "") ? 
@@ -20,7 +41,12 @@ const DroneStrikeDisplay = (props) => {
                 <h3>{formatDate()} </h3>
                 <h2>{props.strike.narrative}</h2>
                 <ul>
-                    <h3>Deaths: {props.strike.deaths}</h3>
+                    <div>
+                        <h3>Deaths: {props.strike.deaths}</h3>
+                        <ul>
+                            {displayDeathImages()}
+                        </ul>
+                    </div>
                     {(props.strike.injuries !== "") ? <h3>Injuries: {props.strike.injuries}</h3> : <h3>No reported Injuries</h3>}
                     {(props.strike.civilians !== "") ? <h3>Civilians: {props.strike.civilians}</h3> : <h3>No confimred civilian casualties</h3>}
                     {(props.strike.children !== "") ? <h3>Children: {props.strike.children}</h3> : <h3>No confimred children casualties</h3>}
@@ -28,7 +54,8 @@ const DroneStrikeDisplay = (props) => {
             <Map lat={props.strike.lat} lon={props.strike.lon}/>
             
             <h2> Report a Strike </h2>
-            <form onSubmit={(event)=>props.handleStrikeReport(event, event.target.value)} 
+            <form 
+            onSubmit={(event)=>props.handleStrikeReport(event, event.target.value)} 
             onChange={(event)=>props.handleNewDroneInputs(event, event.target.value)}>
                 <ul>   
                     Country:  <input type="text" name="country" value={props.newDrone.country} /> <br/> <br/>

@@ -51,12 +51,13 @@ class App extends Component {
 
   handleNewDroneInputs = (e, value) => {
     
-    this.setState({ newDrone: {
+    this.setState({ 
+      newDrone: {
       ...this.state.newDrone, 
       [e.target.name]: value
     }
       
-    })
+    }, ()=>console.log(this.state.newDrone))
 
   }
 
