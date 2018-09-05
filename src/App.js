@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
-// import backupData from './data'
+import backupData from './data'
 import DroneStrikeList from './Components/DroneStrikeList';
 import DroneStrikeDisplay from './Components/DroneStrikeDisplay';
 
@@ -26,8 +26,11 @@ class App extends Component {
 
 
   componentDidMount(){
-    var url = "api.dronestre.am/data"
-    fetch(`https://${url}`).then(res=>res.json()).then( data => this.setState({droneStrikes: data.strike}))
+    // var url = "api.dronestre.am/data"
+    // fetch(`https://${url}`).then(res=>res.json()).then( data => this.setState({droneStrikes: data.strike}))
+    
+    this.setState({droneStrikes: backupData.strike})
+    console.log(this.state)
   }
  
 

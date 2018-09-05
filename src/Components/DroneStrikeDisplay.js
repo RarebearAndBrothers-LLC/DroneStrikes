@@ -32,6 +32,10 @@ const DroneStrikeDisplay = (props) => {
         }
         return arr 
     }
+
+  
+
+
     
     return(
         (props.strike !== "") ? 
