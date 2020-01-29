@@ -49,34 +49,9 @@ class App extends Component {
   }
 
 
-  handleNewDroneInputs = (e, value) => {
-    
-    this.setState({ 
-      newDrone: {
-      ...this.state.newDrone, 
-      [e.target.name]: value
-    }
-      
-    }, ()=>console.log(this.state.newDrone))
-
-  }
-
-  handleStrikeReport = (e, value) => {
-
-      e.preventDefault()
-      
-    let config = {
-      body: JSON.stringify(this.state.newDrone),
-      headers: {"Content-Type": "application/json"},
-      method: "POST"
-    }
-
-    fetch('http://localhost:4000/drones', config).then(response => response.json()).then( data => this.setState({
-       droneStrikes: [this.state.newDrone, ...this.state.droneStrikes]
-    }, ()=>console.log(this.state)))
+  
 
 
-  }
 
   render() {
     return (
@@ -85,7 +60,7 @@ class App extends Component {
           <DroneStrikeList droneStrikes={this.state.droneStrikes} handleClick={this.handleClick} handleChange={this.handleChange} searchQuery={this.state.searchQuery} filteredList={this.filteredList()}/> 
         </div>
         <div className="view-container">
-          <DroneStrikeDisplay strike={this.state.selectedStrike} handleStrikeReport={this.handleStrikeReport} newDrone={this.state.newDrone} handleNewDroneInputs={this.handleNewDroneInputs}/>
+          <DroneStrikeDisplay strike={this.state.selectedStrike}  />
         </div>
       </div>
     );

@@ -21,7 +21,6 @@ const DroneStrikeDisplay = (props) => {
         } else {
             civilianDeaths = parseInt(props.strike.civilians)
         }
-    
 
         for(let i=0; i < parseInt(props.strike.deaths); i++){
             if(civilianDeaths <= i){
@@ -33,10 +32,6 @@ const DroneStrikeDisplay = (props) => {
         return arr 
     }
 
-  
-
-
-    
     return(
         (props.strike !== "") ? 
         <div className='strikeDisplay'>
@@ -56,30 +51,12 @@ const DroneStrikeDisplay = (props) => {
                         {(props.strike.civilians !== "") ? <h3>Civilians: {props.strike.civilians}</h3> : <h3>No confimred civilian casualties</h3>}
                         {(props.strike.children !== "") ? <h3>Children: {props.strike.children}</h3> : <h3>No confimred children casualties</h3>}
                     </ul>
+                </div>
             </div>
-
             <Map lat={props.strike.lat} lon={props.strike.lon}/>
-            </div>
-{/*             
-            <h2> Report a Strike </h2>
-            <form 
-            onSubmit={(event)=>props.handleStrikeReport(event, event.target.value)} 
-            onChange={(event)=>props.handleNewDroneInputs(event, event.target.value)}>
-                <ul>   
-                    Country:  <input type="text" name="country" value={props.newDrone.country} /> <br/> <br/>
-                    Date:     <input type="date" name="date" value={props.newDrone.date} /> <br/> <br/>
-                    Narrative: <textarea type="text field" name="narrative" value={props.newDrone.narrative} /> <br/> <br/>
-                    Deaths:  <input type="text" name="deaths" value={props.newDrone.deaths} /> <br/> <br/>
-                    Injuries:  <input type="text" name="injuries" value={props.newDrone.injuries} /> <br/> <br/>
-                    Civilians Killed:  <input type="text" name="civilians" value={props.newDrone.civilians} /> <br/> <br/>
-                    Children Killed:  <input type="text" name="children" value={props.newDrone.children} />  <br/>
-                    Report Source Link:  <input type="text" name="link" value={props.newDrone.link} />  <br/>  <br/>
-                    <input type="submit" value="Report Drone Strike" />
-                </ul>
-            </form> */}
-        
- 
-      </div> : null
+         </div> 
+         : 
+         null
     )
 }
 

@@ -12,10 +12,10 @@
     text-align: center;
     background-image: url('./background.jpg');
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-    
+    background-position: center;
+    background-size: cover;
     height: 1200px;
+    color: black;
 }
 
 .deaths {
@@ -27,13 +27,21 @@
     text-align: center;
 }
 
+.strikeInfo{
+    background-color: white;
+    opacity: .8;
+    position: center;
+    margin-top: -21px;
+}
+
 .search{
     margin-top: 20px;
-    width: 300px;
+    width: 275px;
 }
 
 .map{
-    text-align: center;
+    display: inline-block;
+    margin-top: 100px;
 }
 
 
