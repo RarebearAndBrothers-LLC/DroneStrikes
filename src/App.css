@@ -1,6 +1,5 @@
 .list-container {
-    text-align: center;
-    width: 15%;
+    text-align: left;
     float: left;
     overflow-y: scroll;
     height: 1200px;
