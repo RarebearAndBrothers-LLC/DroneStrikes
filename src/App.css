@@ -1,6 +1,6 @@
 .list-container {
     text-align: center;
-    width: 25%;
+    width: 15%;
     float: left;
     overflow-y: scroll;
     height: 1200px;
@@ -8,7 +8,14 @@
 
 .view-container {
     float: right; 
-    width: 75%
+    width: 85%;
+    text-align: center;
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    
+    height: 1200px;
 }
 
 .deaths {
@@ -17,8 +24,18 @@
 
 .droneStrikeList{
     background-color: bisque;
-    width: 80%;
     text-align: center;
 }
+
+.search{
+    margin-top: 20px;
+    width: 300px;
+}
+
+.map{
+    text-align: center;
+}
+
+
 
 

@@ -39,24 +39,28 @@ const DroneStrikeDisplay = (props) => {
     
     return(
         (props.strike !== "") ? 
-        <div className='col-md-8'>
-            <h1>Strike Details</h1>
-            <div>
-                <h3>{formatDate()} </h3>
-                <h2>{props.strike.narrative}</h2>
-                <ul>
-                    <div>
-                        <h3>Deaths: {props.strike.deaths}</h3>
-                        <ul>
-                            {displayDeathImages()}
-                        </ul>
-                    </div>
-                    {(props.strike.injuries !== "") ? <h3>Injuries: {props.strike.injuries}</h3> : <h3>No reported Injuries</h3>}
-                    {(props.strike.civilians !== "") ? <h3>Civilians: {props.strike.civilians}</h3> : <h3>No confimred civilian casualties</h3>}
-                    {(props.strike.children !== "") ? <h3>Children: {props.strike.children}</h3> : <h3>No confimred children casualties</h3>}
-                </ul>
+        <div className='strikeDisplay'>
+            <div className='strikeInfo'>
+                <h1>Strike Details</h1>
+                <div>
+                    <h3>{formatDate()} </h3>
+                    <h2>{props.strike.narrative}</h2>
+                    <ul>
+                        <div>
+                            <h3>Deaths: {props.strike.deaths}</h3>
+                            <ul>
+                                {displayDeathImages()}
+                            </ul>
+                        </div>
+                        {(props.strike.injuries !== "") ? <h3>Injuries: {props.strike.injuries}</h3> : <h3>No reported Injuries</h3>}
+                        {(props.strike.civilians !== "") ? <h3>Civilians: {props.strike.civilians}</h3> : <h3>No confimred civilian casualties</h3>}
+                        {(props.strike.children !== "") ? <h3>Children: {props.strike.children}</h3> : <h3>No confimred children casualties</h3>}
+                    </ul>
+            </div>
+
             <Map lat={props.strike.lat} lon={props.strike.lon}/>
-            
+            </div>
+{/*             
             <h2> Report a Strike </h2>
             <form 
             onSubmit={(event)=>props.handleStrikeReport(event, event.target.value)} 
@@ -72,8 +76,8 @@ const DroneStrikeDisplay = (props) => {
                     Report Source Link:  <input type="text" name="link" value={props.newDrone.link} />  <br/>  <br/>
                     <input type="submit" value="Report Drone Strike" />
                 </ul>
-            </form>
-        </div>
+            </form> */}
+        
  
       </div> : null
     )
