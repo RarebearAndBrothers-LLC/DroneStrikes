@@ -3,6 +3,7 @@ import './App.css'
 import backupData from './data'
 import DroneStrikeList from './Components/DroneStrikeList';
 import DroneStrikeDisplay from './Components/DroneStrikeDisplay';
+import axios from 'axios';
 
 
 
@@ -26,11 +27,9 @@ class App extends Component {
 
 
   componentDidMount(){
-    // var url = "api.dronestre.am/data"
-    // fetch(`https://${url}`).then(res=>res.json()).then( data => this.setState({droneStrikes: data.strike}))
-    
-    this.setState({droneStrikes: backupData.strike})
-    console.log(this.state)
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = "http://api.dronestre.am/data"
+    axios.get(proxyurl + url).then(res => res).then(data=> this.setState({droneStrikes: data.data.strike}))
   }
  
 
