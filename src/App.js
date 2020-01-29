@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css'
-import backupData from './data'
 import DroneStrikeList from './Components/DroneStrikeList';
 import DroneStrikeDisplay from './Components/DroneStrikeDisplay';
 import axios from 'axios';
@@ -8,7 +7,6 @@ import axios from 'axios';
 
 
 class App extends Component {
-// Update state based on handleChange not on submit 
   state = {
     droneStrikes: [],
     selectedStrike: "",

@@ -15,8 +15,10 @@
     display: inline
 }
 
-.search{
-    
+.droneStrikeList{
+    background-color: bisque;
+    width: 80%;
+    text-align: center;
 }
 
 

@@ -19,7 +19,7 @@ const DroneStrikeList = (props) => {
     }
     
   return (
-    <div>
+    <div className="droneStrikeList">
       <div>
         <form className="search">
           <input placeholder="Sort by Country/Date" value={props.searchQuery} onChange={(event) => props.handleChange(event, event.target.value)}/>
