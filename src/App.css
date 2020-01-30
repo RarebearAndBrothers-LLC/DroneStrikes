@@ -3,7 +3,7 @@
     width: 15%;
     float: left;
     overflow-y: scroll;
-    height: 1000px;
+    height: 1200px;
     color: white;
 }
 
@@ -14,7 +14,7 @@
     background-image: url('./background.jpg');
     background-position: center;
     background-size: 100%;    
-    height: auto;
+    height: 1200px;
     color: rgb(58, 56, 56);
 }
 
@@ -45,7 +45,7 @@
 
 .map{
     display: inline-block;
-    margin-top: 100px;
+    margin-top: 20px;
     
 }
 
