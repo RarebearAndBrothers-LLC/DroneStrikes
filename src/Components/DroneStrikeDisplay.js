@@ -51,10 +51,12 @@ const DroneStrikeDisplay = (props) => {
                         {(props.strike.civilians !== "") ? <h3>Civilians: {props.strike.civilians}</h3> : <h3>No confimred civilian casualties</h3>}
                         {(props.strike.children !== "") ? <h3>Children: {props.strike.children}</h3> : <h3>No confimred children casualties</h3>}
                     </ul>
-                    <Map lat={props.strike.lat} lon={props.strike.lon}/>
+                    
                 </div>
             </div>
-            
+            <div id="mapDiv"> 
+                        <Map lat={props.strike.lat} lon={props.strike.lon}/>
+            </div>
          </div> 
          : 
          null
