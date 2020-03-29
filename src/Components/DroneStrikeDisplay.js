@@ -9,7 +9,8 @@ const DroneStrikeDisplay = (props) => {
         if(props.strike.date){
             let longDate = props.strike.date;
             let date = longDate.split("T")[0];
-        return date}
+        return date
+        }
     }
 
     let displayDeathImages = () => {
@@ -55,7 +56,7 @@ const DroneStrikeDisplay = (props) => {
                 </div>
             </div>
             <div id="mapDiv"> 
-                        <Map lat={props.strike.lat} lon={props.strike.lon}/>
+                 <Map lat={props.strike.lat} lon={props.strike.lon}/>
             </div>
          </div> 
          : 
